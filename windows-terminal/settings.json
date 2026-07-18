@@ -1,0 +1,156 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "alwaysShowNotificationIcon": false,
+    "alwaysShowTabs": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "disabledProfileSources": 
+    [
+        "Windows.Terminal.VisualStudio",
+        "Windows.Terminal.Azure",
+        "Git"
+    ],
+    "initialCols": 160,
+    "initialRows": 38,
+    "keybindings": 
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "icon": null,
+            "profile": "{1b1eda0c-7e2e-41dc-8045-77e765d0a127}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{9606060e-a35e-52d8-b877-288ad0f4f186}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{c9e33b2f-e871-4c3f-8996-d082d3ec8529}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{69cdaa6a-c691-498e-a2c5-1b2c0413869e}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+            "type": "profile"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "antialiasingMode": "cleartype",
+            "bellStyle": "none",
+            "colorScheme": "AstroDark",
+            "cursorShape": "bar",
+            "experimental.retroTerminalEffect": false,
+            "font": 
+            {
+                "builtinGlyphs": true,
+                "face": "JetBrainsMono Nerd Font",
+                "features": 
+                {
+                    "calt": 0
+                },
+                "size": 13
+            },
+            "intenseTextStyle": "all",
+            "scrollbarState": "hidden"
+        },
+        "list": 
+        [
+            {
+                "commandline": "ssh master@kali",
+                "guid": "{69cdaa6a-c691-498e-a2c5-1b2c0413869e}",
+                "hidden": false,
+                "icon": "\\\\wsl.localhost\\archlinux\\home\\master\\icons\\debian.ico",
+                "name": "kali"
+            },
+            {
+                "commandline": "ssh master@pi",
+                "guid": "{c9e33b2f-e871-4c3f-8996-d082d3ec8529}",
+                "hidden": false,
+                "icon": "\\\\wsl.localhost\\archlinux\\home\\master\\icons\\pi.ico",
+                "name": "pi"
+            },
+            {
+                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "commandline": "wsl.exe -d archlinux",
+                "guid": "{1b1eda0c-7e2e-41dc-8045-77e765d0a127}",
+                "hidden": false,
+                "icon": "\\\\wsl.localhost\\archlinux\\home\\master\\icons\\arch.ico",
+                "name": "wsl",
+                "startingDirectory": "~"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#5EB7FF",
+            "brightBlack": "#34363A",
+            "brightBlue": "#81DAFF",
+            "brightCyan": "#6DE5DB",
+            "brightGreen": "#AAE382",
+            "brightPurple": "#FFBAFF",
+            "brightRed": "#FFA6AE",
+            "brightWhite": "#D0D3DE",
+            "brightYellow": "#FFCE48",
+            "cursorColor": "#ADB0BB",
+            "cyan": "#4AC2B8",
+            "foreground": "#ADB0BB",
+            "green": "#87C05F",
+            "name": "AstroDark",
+            "purple": "#DD97F1",
+            "red": "#FF838B",
+            "selectionBackground": "#26343F",
+            "white": "#9B9FA9",
+            "yellow": "#DFAB25"
+        }
+    ],
+    "showTabsFullscreen": false,
+    "showTabsInTitlebar": true,
+    "showTerminalTitleInTitlebar": true,
+    "tabSwitcherMode": "disabled",
+    "tabWidthMode": "equal",
+    "theme": "dark",
+    "themes": [],
+    "useAcrylicInTabRow": false
+}
