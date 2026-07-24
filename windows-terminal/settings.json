@@ -116,6 +116,18 @@
                 "icon": "\\\\wsl.localhost\\archlinux\\home\\master\\icons\\arch.ico",
                 "name": "wsl",
                 "startingDirectory": "~"
+            },
+            {
+                "guid": "{65c2010c-9c87-5cb6-8393-dc79eea91eae}",
+                "hidden": false,
+                "name": "archlinux",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{e3f60ed8-960d-53e2-8a23-22fc0edac711}",
+                "hidden": false,
+                "name": "archlinux",
+                "source": "Microsoft.WSL"
             }
         ]
     },
