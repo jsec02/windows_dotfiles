@@ -463,9 +463,9 @@
     "com.microsoft.powertoys.hosts.open",
     "com.microsoft.powertoys.hosts.openAdmin",
     "com.microsoft.powertoys.hosts.openSettings",
-    "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys6224378385071502265",
     "com.microsoft.powertoys.registryPreview.open",
-    "com.microsoft.powertoys.registryPreview.openSettings"
+    "com.microsoft.powertoys.registryPreview.openSettings",
+    "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys8131226575851913470"
   ],
   "Aliases": {
     ":": {
