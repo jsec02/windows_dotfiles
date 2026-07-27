@@ -3,27 +3,42 @@
 # ================================================================================
 
 # Load secrets
-$LocalProfile = 'C:\Users\master\Documents/powerShell/Microsoft.PowerShell_profile.local.ps1'
-if (Test-Path $LocalProfile) {
+$LocalProfile = 'C:/Users/master/Documents/powerShell/Microsoft.PowerShell_profile.local.ps1'
+if (Test-Path -Path $LocalProfile) {
     . $LocalProfile 
 }
 
 # ================================== FUNCTIONS ===================================
 
+# Help
 function Get-CommandParams {
     param([string]$Command)
-    Get-Help $Command -Parameter *
+    Get-Help -Name $Command -Parameter *
 }
 
 function Get-CommandExamples {
     param([string]$Command)
-    Get-Help $Command -Example
+    Get-Help -Name $Command -Example
+}
+
+# git
+function Get-GitStatus {
+    git status 
+}
+
+function Update-GitMaster {
+    git pull origin master
 }
 
 # =================================== ALIASES ====================================
 
-Set-Alias gcp Get-CommandParams
-Set-Alias gce Get-CommandExamples
+# Help
+Set-Alias -Name gcp -Value Get-CommandParams
+Set-Alias -Name gce -Value Get-CommandExamples
+
+# git
+Set-Alias -Name gs -Value Get-GitStatus
+Set-Alias -Name gpom -Value Update-GitMaster
 
 # =================================== VI-MODE ====================================
 
