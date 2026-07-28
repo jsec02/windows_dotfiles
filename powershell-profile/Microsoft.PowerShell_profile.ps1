@@ -21,6 +21,11 @@ function Get-CommandExamples {
     Get-Help -Name $Command -Example
 }
 
+# WinGet
+function Update-Packages {
+    Get-WinGetPackage | Where-Object IsUpdateAvailable | Update-WinGetPackage
+}
+
 # git
 function Get-GitStatus {
     git status 
@@ -35,6 +40,9 @@ function Update-GitMaster {
 # Help
 Set-Alias -Name gcp -Value Get-CommandParams
 Set-Alias -Name gce -Value Get-CommandExamples
+
+# WinGet
+Set-Alias -Name up -Value Update-Packages
 
 # git
 Set-Alias -Name gs -Value Get-GitStatus
