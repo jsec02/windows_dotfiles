@@ -23,7 +23,7 @@ function Get-CommandExamples {
 
 # WinGet
 function Update-Packages {
-    Get-WinGetPackage | Where-Object IsUpdateAvailable | Update-WinGetPackage
+    Get-WinGetPackage | Where-Object IsUpdateAvailable | Update-WinGetPackage -Mode Silent
 }
 
 # git
