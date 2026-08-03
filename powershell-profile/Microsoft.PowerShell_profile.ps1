@@ -2,6 +2,21 @@
 # =                              POWERSHELL_PROFILE                              =
 # ================================================================================
 
+
+# Automatically start zellij
+# pwsh is not supported with zellij setup --generate-auto-start
+if (-not ($env:ZELLIJ)) {
+    if ($env:ZELLIJ_AUTO_ATTACH -eq 'true') {
+        zellij attach -c
+    } else {
+        zellij
+    }
+
+    if ($env:ZELLIJ_AUTO_EXIT -eq 'true') {
+        exit
+    }
+}
+
 # Load secrets
 $LocalProfile = 'C:/Users/master/Documents/powerShell/Microsoft.PowerShell_profile.local.ps1'
 if (Test-Path -Path $LocalProfile) {
