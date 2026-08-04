@@ -81,3 +81,14 @@ Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $OnViModeChang
 # ================================ HISTORY/ATUIN =================================
 
 atuin init powershell | Out-String | Invoke-Expression
+
+# =============================== AUTOSUGGESTIONS ================================
+
+# With zsh, the way to get ghost text auto-suggestions working is with
+# zsh-autosuggestions. zsh-autosuggestions integrates directly atuin seen here
+# https://docs.atuin.sh/latest/integrations/ which means on zsh, we can drop native 
+# history entirely. On pwsh, no such integration exists so we still need to keep 
+# C:\Users\master\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+# alongside C:\Users\master\.local\share\atuin\history.db
+# This is apparent in the history module inside the windows inventory
+Set-PSReadLineOption -PredictionSource History
