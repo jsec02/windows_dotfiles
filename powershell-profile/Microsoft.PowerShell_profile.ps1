@@ -50,6 +50,25 @@ function Update-GitMaster {
     git pull origin master
 }
 
+# Processes
+function Get-GroupedProcesses {
+    Get-Process | Group-Object -Property ProcessName | ForEach-Object {
+        [PSCustomObject][ordered]@{
+            'NPM(K)' = (($_.Group.NonpagedSystemMemorySize64 | Measure-Object -Sum).Sum / 1KB)
+            'PM(M)' = (($_.Group.PagedMemorySize64 | Measure-Object -Sum).Sum / 1MB)
+            'WS(M)' = (($_.Group.WorkingSet64 | Measure-Object -Sum).Sum / 1MB)
+            'CPU' = ($_.Group.CPU | Measure-Object -Sum).Sum
+            'CNT' = $_.Count
+            'ProcessName' = $_.Name
+        }
+    }
+}
+
+function Get-SortedGroupedProcesses {
+    param([string]$SortBy = 'WS(M)')
+    Get-GroupedProcesses | Sort-Object -Property $SortBy -Descending | Format-Table
+}
+
 # =================================== ALIASES ====================================
 
 # Help
@@ -62,6 +81,9 @@ Set-Alias -Name up -Value Update-Packages
 # git
 Set-Alias -Name gs -Value Get-GitStatus
 Set-Alias -Name gpom -Value Update-GitMaster
+
+# Processes
+Set-Alias -Name ps -Value Get-SortedGroupedProcesses
 
 # =================================== VI-MODE ====================================
 
