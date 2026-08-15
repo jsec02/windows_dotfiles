@@ -78,6 +78,12 @@ function Disable-Prediction {
     Set-PSReadLineOption -PredictionSource None
 }
 
+# CIM
+function Get-CimChildNamespace {
+    param([string]$Namespace = 'root')
+    Get-CimInstance -Namespace $Namespace -ClassName __NAMESPACE | Select-Object -Property Name
+}
+
 # =================================== ALIASES ====================================
 
 # Help
@@ -93,6 +99,10 @@ Set-Alias -Name gpom -Value Update-GitMaster
 
 # Processes
 Set-Alias -Name ps -Value Get-SortedGroupedProcesses
+
+# CIM
+Set-Alias -Name gcc -Value Get-CimClass
+Set-Alias -Name gccn -Value Get-CimChildNamespace
 
 # =================================== VI-MODE ====================================
 
