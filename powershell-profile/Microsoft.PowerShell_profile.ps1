@@ -69,6 +69,15 @@ function Get-SortedGroupedProcesses {
     Get-GroupedProcesses | Sort-Object -Property $SortBy -Descending | Format-Table
 }
 
+# Prediction
+function Enable-Prediction {
+    Set-PSReadLineOption -PredictionSource History
+}
+
+function Disable-Prediction {
+    Set-PSReadLineOption -PredictionSource None
+}
+
 # =================================== ALIASES ====================================
 
 # Help
