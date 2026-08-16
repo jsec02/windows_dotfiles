@@ -127,6 +127,7 @@ function Get-CPU {
 function Get-GPU {
     Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_VideoController |  ForEach-Object {
         [PSCustomObject]@{
+            'DeviceID' = $_.DeviceID
             'Name' = $_.Name
             'DriverDate' = $_.DriverDate
             'DriverVersion' = $_.DriverVersion
