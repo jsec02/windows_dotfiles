@@ -109,8 +109,8 @@ function Get-LocalDrive {
     } | Format-Table
 } 
 
-# CPU/Processor
-function Get-Processor {
+# CPU
+function Get-CPU {
     Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_Processor |  ForEach-Object {
         [PSCustomObject]@{
             'DeviceID' = $_.DeviceID
@@ -119,6 +119,17 @@ function Get-Processor {
             'LogicalProcessors' = $_.NumberOfLogicalProcessors
             'Threads' = $_.ThreadCount
             'CurrentClockSpeed' = $_.CurrentClockSpeed
+        }
+    }
+}
+
+# GPU
+function Get-GPU {
+    Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_VideoController |  ForEach-Object {
+        [PSCustomObject]@{
+            'Name' = $_.Name
+            'DriverDate' = $_.DriverDate
+            'DriverVersion' = $_.DriverVersion
         }
     }
 }
