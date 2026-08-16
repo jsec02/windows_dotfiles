@@ -96,7 +96,7 @@ function Get-Driver {
 }
 
 # Drives
-function Get-Drive {
+function Get-LocalDrive {
     # DriveType of 3 signifies a local disk type
     Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} | ForEach-Object {
         [PSCustomObject]@{
