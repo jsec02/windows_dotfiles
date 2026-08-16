@@ -53,7 +53,7 @@ function Update-GitMaster {
 # Processes
 function Get-GroupedProcesses {
     Get-Process | Group-Object -Property ProcessName | ForEach-Object {
-        [PSCustomObject][ordered]@{
+        [PSCustomObject]@{
             'NPM(K)' = (($_.Group.NonpagedSystemMemorySize64 | Measure-Object -Sum).Sum / 1KB)
             'PM(M)' = (($_.Group.PagedMemorySize64 | Measure-Object -Sum).Sum / 1MB)
             'WS(M)' = (($_.Group.WorkingSet64 | Measure-Object -Sum).Sum / 1MB)
@@ -82,6 +82,17 @@ function Disable-Prediction {
 function Get-CimChildNamespace {
     param([string]$Namespace = 'root')
     Get-CimInstance -Namespace $Namespace -ClassName __NAMESPACE | Select-Object -Property Name
+}
+
+# Drivers
+function Get-Driver {
+    Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_SystemDriver | ForEach-Object {
+        [PSCustomObject]@{
+            'ModuleName' = $_.Name
+            'DisplayName' = $_.DisplayName
+            'DriverType' = $_.ServiceType
+        }
+    }
 }
 
 # =================================== ALIASES ====================================
