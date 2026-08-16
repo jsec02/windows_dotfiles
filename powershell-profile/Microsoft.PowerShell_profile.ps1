@@ -95,6 +95,20 @@ function Get-Driver {
     }
 }
 
+# Drives
+function Get-Drive {
+    # DriveType of 3 signifies a local disk type
+    Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} | ForEach-Object {
+        [PSCustomObject]@{
+            'DeviceID' = $_.DeviceID
+            'VolumeName' = $_.VolumeName
+            'Size(G)' = $_.Size / 1GB
+            'Free(G)' = $_.FreeSpace / 1GB
+            'PercentFree' = ($_.FreeSpace / $_.Size) * 100
+        }
+    } | Format-Table
+} 
+
 # =================================== ALIASES ====================================
 
 # Help
