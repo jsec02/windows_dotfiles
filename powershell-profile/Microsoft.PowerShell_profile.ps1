@@ -119,7 +119,6 @@ function Get-Processor {
             'LogicalProcessors' = $_.NumberOfLogicalProcessors
             'Threads' = $_.ThreadCount
             'CurrentClockSpeed' = $_.CurrentClockSpeed
-            'MaxClockSpeed' = $_.MaxClockSpeed
         }
     }
 }
