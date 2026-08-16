@@ -109,6 +109,21 @@ function Get-LocalDrive {
     } | Format-Table
 } 
 
+# CPU/Processor
+function Get-Processor {
+    Get-CimInstance -Namespace Root\CIMv2 -ClassName Win32_Processor |  ForEach-Object {
+        [PSCustomObject]@{
+            'DeviceID' = $_.DeviceID
+            'Name' = $_.Name
+            'Cores' = $_.NumberOfCores
+            'LogicalProcessors' = $_.NumberOfLogicalProcessors
+            'Threads' = $_.ThreadCount
+            'CurrentClockSpeed' = $_.CurrentClockSpeed
+            'MaxClockSpeed' = $_.MaxClockSpeed
+        }
+    }
+}
+
 # =================================== ALIASES ====================================
 
 # Help
