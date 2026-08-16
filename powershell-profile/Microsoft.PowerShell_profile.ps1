@@ -131,7 +131,7 @@ function Get-GPU {
             'DriverDate' = $_.DriverDate
             'DriverVersion' = $_.DriverVersion
         }
-    }
+    } | Format-List
 }
 
 # =================================== ALIASES ====================================
