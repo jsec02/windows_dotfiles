@@ -7,19 +7,6 @@ return {
     -- enabled = false,
     event = { "BufReadPre", "BufNewFile" },
     opts = function()
-        Snacks.toggle({
-            name = "Git Signs",
-            get = function()
-                return require("gitsigns.config").config.signcolumn
-            end,
-            set = function(state)
-                require("gitsigns").toggle_signs(state)
-                if state then
-                    require("gitsigns").refresh()
-                end
-            end,
-        }):map("<leader>ug")
-
         return {
             signs = {
                 add = { text = "▎" },
