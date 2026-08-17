@@ -1,0 +1,139 @@
+-- ================================================================================
+-- =                                   OPTIONS                                    =
+-- ================================================================================
+
+local opt = vim.opt
+local g = vim.g
+local cmd = vim.cmd
+
+-- ================================ INTERFACE / UI ================================
+
+g.loaded_matchparen = 1 -- Disable matchparen (using rainbow-delimiters)
+g.have_nerd_font = true -- Enable nerd font
+opt.number = true -- Show absolute line numbers
+opt.relativenumber = true -- Show relative line numbers
+opt.mouse = "" -- Disable mouse in all modes
+opt.guicursor:append("c:ver25,a:blinkon0") -- Custom cursor styles
+cmd("aunmenu PopUp") -- Disable right click menu
+opt.title = true -- Enable window title
+opt.laststatus = 3 -- Always show statusline
+opt.statuscolumn = "%!v:lua.require'custom.modules.status_column'.get()" -- Custom status column
+opt.signcolumn = "yes" -- Always show sign column
+opt.numberwidth = 4 -- Set line number column width
+opt.statusline = " " -- Show a blank statusline before heirline loads in
+opt.showtabline = 0 -- Disable tabline
+-- opt.cmdheight = 0 -- Hide command line when not in use
+opt.showmode = false -- Dont show mode messages
+opt.termguicolors = true -- Enable true color support
+opt.cursorline = true -- Highlight the current line
+opt.wrap = false -- Disable line wrapping
+opt.breakindent = true -- Indent wrapped lines to match line start
+opt.breakindentopt = "list:-1" -- Add padding for lists (if 'wrap' is set)
+opt.linebreak = true -- Wrap lines at 'breakat' (if 'wrap' is set)
+opt.scrolloff = 10 -- Vertical scroll offset
+opt.sidescrolloff = 10 -- Horizontal scroll offset
+opt.smoothscroll = true -- Smooth scrolling with soft wrapping
+opt.winborder = "rounded" -- Rounded borders for floating windows
+opt.fillchars:append({ eob = " " }) -- Hide "~" at EOF
+-- opt.shortmess:append("I") -- Dont show intro message
+-- opt.showmatch = true -- Briefly hover cursor over opening parenthesis
+
+-- =================================== BEHAVIOR ===================================
+
+opt.whichwrap = "<,>,[,]" -- Allow arrows to wrap across lines
+opt.swapfile = false -- Disable swap files
+opt.undofile = true -- Enable persistent undo
+opt.updatetime = 200 -- Faster update time for diagnostics, etc.
+opt.timeoutlen = 400 -- Timeout for mapped sequence to complete
+opt.splitright = true -- Vertical splits open to the right
+opt.splitbelow = true -- Horizontal splits open below
+opt.splitkeep = "screen" -- Reduce scroll during window split
+opt.confirm = true -- Confirm to save changes when closing
+opt.autoread = true -- Enable automatic file reloading (requires checktime triggers to work)
+opt.infercase = true -- Infer case in built-in completion
+opt.virtualedit = "block" -- Allow going past end of line in blockwise mode
+opt.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit ShaDa file (for startup)
+-- opt.concealcursor = "n" -- keep concealed even in normal mode on cursor line
+
+-- ================================== SEARCHING ===================================
+
+opt.ignorecase = true -- Case-insensitive search...
+opt.smartcase = true -- ...unless uppercase letters in query
+opt.incsearch = true -- Show search matches as you type
+opt.hlsearch = true -- Highlight all search matches
+-- opt.inccommand = "split" -- Preview substitute commands live
+
+-- ================================= INDENTATION ==================================
+
+opt.shiftwidth = 4 -- Indent size
+opt.tabstop = 4 -- Tab width
+opt.expandtab = true -- Convert tabs to spaces
+opt.autoindent = true -- Copy indent from current line when starting new one
+
+-- ================================== FORMATTING ==================================
+
+opt.formatoptions = "qnl1j" -- Improve comment editing
+opt.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]] -- Regex for numbered list start
+
+-- =================================== SPELLING ===================================
+
+opt.spelloptions = "camel" -- Treat camelCase word parts as separate words
+opt.spellfile = vim.fn.expand("~/.config/nvim/spell/en.utf-8.add") -- Point to spellfile
+
+-- ================================== PROVIDERS ===================================
+
+g.loaded_python_provider = 0
+g.loaded_python3_provider = 0
+g.loaded_node_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
+
+-- =============================== BUILT-IN PLUGINS ===============================
+
+g.loaded_getscript = 1
+g.loaded_getscriptPlugin = 1
+g.loaded_vimball = 1
+g.loaded_vimballPlugin = 1
+g.loaded_2html_plugin = 1
+g.loaded_logiPat = 1
+g.loaded_rrhelper = 1
+-- g.loaded_netrw = 1
+-- g.loaded_netrwPlugin = 1
+-- g.loaded_netrwSettings = 1
+-- g.loaded_netrwFileHandlers = 1
+g.netrw_silent = 1
+g.loaded_matchit = 1
+g.loaded_matchparen = 1
+g.loaded_sql_completion = 1
+g.omni_sql_no_default_maps = 1
+
+-- =================================== SECURITY ===================================
+
+opt.modeline = false -- Disable modelines to prevent arbitrary code execution
+opt.exrc = false -- Don't auto-load project .vimrc/.nvimrc files
+
+-- ================================== CLIPBOARD ===================================
+
+-- https://github.com/neovim/neovim/issues/28611#issuecomment-2147744670
+local function no_paste()
+    return function(lines)
+        local content = vim.fn.getreg('"')
+        return vim.split(content, "\n")
+    end
+end
+
+if os.getenv("SSH_TTY") ~= nil then
+    vim.g.clipboard = {
+        name = "OSC 52",
+        copy = {
+            ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+            ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+        },
+        paste = {
+            ["+"] = no_paste(),
+            ["*"] = no_paste(),
+        },
+    }
+end
+
+opt.clipboard = "unnamedplus"
