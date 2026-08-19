@@ -31,12 +31,17 @@
     [
         {
             "icon": null,
-            "profile": "{1b1eda0c-7e2e-41dc-8045-77e765d0a127}",
+            "profile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
             "type": "profile"
         },
         {
             "icon": null,
-            "profile": "{9606060e-a35e-52d8-b877-288ad0f4f186}",
+            "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "type": "profile"
+        },
+        {
+            "icon": null,
+            "profile": "{1b1eda0c-7e2e-41dc-8045-77e765d0a127}",
             "type": "profile"
         },
         {
@@ -46,7 +51,7 @@
         },
         {
             "icon": null,
-            "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "profile": "{9606060e-a35e-52d8-b877-288ad0f4f186}",
             "type": "profile"
         },
         {
@@ -118,18 +123,6 @@
                 "icon": "\\\\wsl.localhost\\archlinux\\home\\master\\icons\\arch.ico",
                 "name": "wsl",
                 "startingDirectory": "~"
-            },
-            {
-                "guid": "{65c2010c-9c87-5cb6-8393-dc79eea91eae}",
-                "hidden": false,
-                "name": "archlinux",
-                "source": "Microsoft.WSL"
-            },
-            {
-                "guid": "{e3f60ed8-960d-53e2-8a23-22fc0edac711}",
-                "hidden": false,
-                "name": "archlinux",
-                "source": "Microsoft.WSL"
             }
         ]
     },
