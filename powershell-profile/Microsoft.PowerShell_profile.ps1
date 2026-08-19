@@ -26,7 +26,8 @@ if (Test-Path -Path $LocalProfile) {
 # =================================== ENV VARS ===================================
 
 # PowerShell recurses into directories in PSModulePath looking for .psd1 and .psm1 files
-# so we only need to specify the top level directory here
+# As a result, we only need to specify the top level directory here
+# This is behavior is unlike normal Path on both pwsh and Unix shells
 $Env:PSModulePath += ";$HOME\powershell\modules"
 
 # ================================== FUNCTIONS ===================================
