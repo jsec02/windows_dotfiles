@@ -23,6 +23,10 @@ if (Test-Path -Path $LocalProfile) {
     . $LocalProfile 
 }
 
+# =================================== ENV VARS ===================================
+
+$Env:PSModulePath += ";$HOME\powershell\modules"
+
 # ================================== FUNCTIONS ===================================
 
 # Help
