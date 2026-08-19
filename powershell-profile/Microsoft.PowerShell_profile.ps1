@@ -25,6 +25,8 @@ if (Test-Path -Path $LocalProfile) {
 
 # =================================== ENV VARS ===================================
 
+# PowerShell recurses into directories in PSModulePath looking for .psd1 and .psm1 files
+# so we only need to specify the top level directory here
 $Env:PSModulePath += ";$HOME\powershell\modules"
 
 # ================================== FUNCTIONS ===================================
