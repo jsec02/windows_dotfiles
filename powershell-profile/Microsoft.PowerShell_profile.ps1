@@ -20,7 +20,7 @@ if (-not ($env:ZELLIJ)) {
 # Load secrets
 $LocalProfile = 'C:/Users/master/Documents/powerShell/Microsoft.PowerShell_profile.local.ps1'
 if (Test-Path -Path $LocalProfile) {
-    . $LocalProfile 
+    . $LocalProfile
 }
 
 # =================================== ENV VARS ===================================
@@ -42,26 +42,6 @@ function Enable-Prediction {
 function Disable-Prediction {
     Set-PSReadLineOption -PredictionSource None
 }
-
-# =================================== ALIASES ====================================
-
-# Help
-Set-Alias -Name gcp -Value Get-CommandParams
-Set-Alias -Name gce -Value Get-CommandExamples
-
-# WinGet
-Set-Alias -Name up -Value Update-Packages
-
-# git
-Set-Alias -Name gs -Value Get-GitStatus
-Set-Alias -Name gpom -Value Update-GitMaster
-
-# Processes
-Set-Alias -Name ps -Value Get-SortedGroupedProcesses
-
-# CIM
-Set-Alias -Name gcc -Value Get-CimClass
-Set-Alias -Name gccn -Value Get-CimChildNamespace
 
 # =================================== VI-MODE ====================================
 
@@ -86,8 +66,8 @@ atuin init powershell | Out-String | Invoke-Expression
 
 # With zsh, the way to get ghost text auto-suggestions working is with
 # zsh-autosuggestions. zsh-autosuggestions integrates directly atuin seen here
-# https://docs.atuin.sh/latest/integrations/ which means on zsh, we can drop native 
-# history entirely. On pwsh, no such integration exists so we still need to keep 
+# https://docs.atuin.sh/latest/integrations/ which means on zsh, we can drop native
+# history entirely. On pwsh, no such integration exists so we still need to keep
 # C:\Users\master\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 # alongside C:\Users\master\.local\share\atuin\history.db
 # This is apparent in the history module inside the windows inventory
