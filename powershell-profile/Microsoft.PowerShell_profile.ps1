@@ -25,6 +25,9 @@ if (Test-Path -Path $LocalProfile) {
 
 # =================================== ENV VARS ===================================
 
+# 7-Zip is not added to path automatically
+$Env:Path += ';C:\Program Files\7-Zip'
+
 # PowerShell recurses into directories in PSModulePath looking for .psd1 and .psm1 files
 # As a result, we only need to specify the top level directory here
 # This is behavior is unlike normal Path on both pwsh and Unix shells
