@@ -19,36 +19,37 @@
   "AllowBreakthroughShortcut": false,
   "PinnedCommands": [],
   "AllowExternalReload": false,
+  "AllowAltF4": false,
+  "CompactMode": false,
+  "CompactCenterHeightPercentage": 75,
   "ProviderSettings": {
-    "WinGet": {
+    "Windows.Registry": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {},
       "PinnedCommandIds": []
     },
-    "WindowsTerminalProfiles": {
+    "Windows.Services": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {},
       "PinnedCommandIds": []
     },
-    "AllApps": {
+    "PerformanceMonitor": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {},
       "PinnedCommandIds": []
     },
-    "com.microsoft.cmdpal.builtin.datetime": {
+    "com.microsoft.cmdpal.builtin.websearch": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {
-        "com.microsoft.cmdpal.builtin.timedate.fallback": {
+        "com.microsoft.cmdpal.builtin.websearch.execute.fallback": {
           "IsEnabled": true,
           "IncludeInGlobalResults": true
-        }
-      },
-      "PinnedCommandIds": []
-    },
-    "com.microsoft.cmdpal.builtin.system": {
-      "IsEnabled": true,
-      "FallbackCommands": {
-        "com.microsoft.cmdpal.builtin.system.fallback": {
+        },
+        "com.microsoft.cmdpal.builtin.websearch.openurl.fallback": {
           "IsEnabled": true,
           "IncludeInGlobalResults": true
         }
@@ -57,6 +58,7 @@
     },
     "Files": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {
         "com.microsoft.cmdpal.builtin.indexer.fallback": {
           "IsEnabled": true,
@@ -65,13 +67,48 @@
       },
       "PinnedCommandIds": []
     },
-    "PerformanceMonitor": {
+    "com.microsoft.cmdpal.builtin.windowssettings": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {
+        "com.microsoft.cmdpal.builtin.windows.settings.fallback": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": true
+        }
+      },
+      "PinnedCommandIds": []
+    },
+    "com.microsoft.cmdpal.builtin.system": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {
+        "com.microsoft.cmdpal.builtin.system.fallback": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": true
+        }
+      },
+      "PinnedCommandIds": []
+    },
+    "com.microsoft.cmdpal.builtin.calculator": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {
+        "com.microsoft.cmdpal.builtin.calculator.fallback": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        }
+      },
+      "PinnedCommandIds": []
+    },
+    "Bookmarks": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {},
       "PinnedCommandIds": []
     },
     "com.microsoft.cmdpal.builtin.core": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {
         "com.microsoft.cmdpal.log": {
           "IsEnabled": true,
@@ -88,186 +125,17 @@
       },
       "PinnedCommandIds": []
     },
-    "com.microsoft.cmdpal.builtin.remotedesktop": {
-      "IsEnabled": true,
-      "FallbackCommands": {
-        "com.microsoft.cmdpal.builtin.remotedesktop.fallback": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        }
-      },
-      "PinnedCommandIds": []
-    },
-    "Windows.Registry": {
-      "IsEnabled": true,
-      "FallbackCommands": {},
-      "PinnedCommandIds": []
-    },
-    "Bookmarks": {
-      "IsEnabled": true,
-      "FallbackCommands": {},
-      "PinnedCommandIds": []
-    },
-    "com.microsoft.cmdpal.builtin.websearch": {
-      "IsEnabled": true,
-      "FallbackCommands": {
-        "com.microsoft.cmdpal.builtin.websearch.openurl.fallback": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": true
-        },
-        "com.microsoft.cmdpal.builtin.websearch.execute.fallback": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": true
-        }
-      },
-      "PinnedCommandIds": []
-    },
-    "Windows.Services": {
-      "IsEnabled": true,
-      "FallbackCommands": {},
-      "PinnedCommandIds": []
-    },
     "Windows.ClipboardHistory": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {},
       "PinnedCommandIds": []
     },
     "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {
-        "com.microsoft.powertoys.fileExplorerAddons.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.awake.status": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.environmentVariables.openAdmin": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.fancyZones.layouts": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.awake.turnOff": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.environmentVariables.open": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.hosts.open": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.environmentVariables.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.workspaces.openEditor": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.shortcutGuide.toggle": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.cropAndLock.thumbnail": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.peek.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.zoomIt.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.mouseWithoutBorders.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.cropAndLock.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.workspaces.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.textExtractor.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.fancyZones.monitors": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.hosts.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.commandNotFound.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.cropAndLock.screenshot": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
         "com.microsoft.powertoys.mouseUtils.findMyMouse": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.awake.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.powerRename.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys8131226575851913470": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys10300553932281093350": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.screenRuler.toggle": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.imageResizer.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.advancedPaste.open": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.quickAccent.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.screenRuler.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.alwaysOnTop.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.keyboardManager.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.newPlus.openSettings": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
@@ -275,39 +143,19 @@
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.awake.keep1Hour": {
+        "com.microsoft.powertoys.cropAndLock.screenshot": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.colorPicker.openSettings": {
+        "com.microsoft.powertoys.environmentVariables.openAdmin": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.awake.keepIndefinite": {
+        "com.microsoft.powertoys.alwaysOnTop.openSettings": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.awake.keep2Hours": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.fancyZones.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.registryPreview.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.hosts.openAdmin": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.fileLocksmith.openSettings": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        },
-        "com.microsoft.powertoys.registryPreview.open": {
+        "com.microsoft.powertoys.hosts.open": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
@@ -319,11 +167,55 @@
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
+        "com.microsoft.powertoys.mouseUtils.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.environmentVariables.open": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.textExtractor.toggle": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.workspaces.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.zoomIt.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.fancyZones.layouts": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
         "com.microsoft.powertoys.fallback": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.mouseUtils.openSettings": {
+        "com.microsoft.powertoys.screenRuler.toggle": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.awake.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.registryPreview.open": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.fileLocksmith.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.powerRename.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.advancedPaste.open": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
@@ -331,11 +223,59 @@
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.colorPicker.open": {
+        "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys10300553932281093350": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.cropAndLock.reparent": {
+        "com.microsoft.powertoys.fancyZones.openEditor": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.registryPreview.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.lightSwitch.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.awake.keepIndefinite": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.imageResizer.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.keyboardManager.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.quickAccent.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.awake.keep1Hour": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.shortcutGuide.toggle": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.textExtractor.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.awake.status": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.cropAndLock.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.peek.openSettings": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
@@ -347,23 +287,112 @@
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.powerToysRun.openSettings": {
+        "com.microsoft.powertoys.screenRuler.openSettings": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.fancyZones.openEditor": {
+        "com.microsoft.powertoys.environmentVariables.openSettings": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.lightSwitch.openSettings": {
+        "com.microsoft.powertoys.cropAndLock.thumbnail": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
-        "com.microsoft.powertoys.textExtractor.toggle": {
+        "com.microsoft.powertoys.colorPicker.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.hosts.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.awake.keep2Hours": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.mouseWithoutBorders.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "Microsoft.PowerToys.SparseApp_8wekyb3d8bbwe!PowerToys.CmdPalExtension!PowerToys8131226575851913470": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.newPlus.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.fancyZones.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.cropAndLock.reparent": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.workspaces.openEditor": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         },
         "com.microsoft.powertoys.shortcutGuide.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.hosts.openAdmin": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.fancyZones.monitors": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.powerToysRun.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.commandNotFound.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.awake.turnOff": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.colorPicker.open": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        },
+        "com.microsoft.powertoys.fileExplorerAddons.openSettings": {
+          "IsEnabled": true,
+          "IncludeInGlobalResults": false
+        }
+      },
+      "PinnedCommandIds": []
+    },
+    "WindowsTerminalProfiles": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {},
+      "PinnedCommandIds": []
+    },
+    "AllApps": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {},
+      "PinnedCommandIds": []
+    },
+    "WinGet": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {},
+      "PinnedCommandIds": []
+    },
+    "com.microsoft.cmdpal.builtin.remotedesktop": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {
+        "com.microsoft.cmdpal.builtin.remotedesktop.fallback": {
           "IsEnabled": true,
           "IncludeInGlobalResults": false
         }
@@ -372,6 +401,7 @@
     },
     "com.microsoft.cmdpal.builtin.run": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {
         "com.microsoft.cmdpal.builtin.shell.fallback": {
           "IsEnabled": true,
@@ -380,29 +410,21 @@
       },
       "PinnedCommandIds": []
     },
-    "com.microsoft.cmdpal.builtin.windowssettings": {
+    "WindowWalker": {
       "IsEnabled": true,
+      "SearchWeight": "Normal",
+      "FallbackCommands": {},
+      "PinnedCommandIds": []
+    },
+    "com.microsoft.cmdpal.builtin.datetime": {
+      "IsEnabled": true,
+      "SearchWeight": "Normal",
       "FallbackCommands": {
-        "com.microsoft.cmdpal.builtin.windows.settings.fallback": {
+        "com.microsoft.cmdpal.builtin.timedate.fallback": {
           "IsEnabled": true,
           "IncludeInGlobalResults": true
         }
       },
-      "PinnedCommandIds": []
-    },
-    "com.microsoft.cmdpal.builtin.calculator": {
-      "IsEnabled": true,
-      "FallbackCommands": {
-        "com.microsoft.cmdpal.builtin.calculator.fallback": {
-          "IsEnabled": true,
-          "IncludeInGlobalResults": false
-        }
-      },
-      "PinnedCommandIds": []
-    },
-    "WindowWalker": {
-      "IsEnabled": true,
-      "FallbackCommands": {},
       "PinnedCommandIds": []
     }
   },
@@ -474,6 +496,16 @@
     "com.microsoft.powertoys.fallback"
   ],
   "Aliases": {
+    "\u003C": {
+      "CommandId": "com.microsoft.cmdpal.windowwalker",
+      "Alias": "\u003C",
+      "IsDirect": true
+    },
+    "\u003E": {
+      "CommandId": "com.microsoft.cmdpal.run",
+      "Alias": "\u003E",
+      "IsDirect": true
+    },
     "??": {
       "CommandId": "com.microsoft.cmdpal.websearch",
       "Alias": "??",
@@ -494,16 +526,6 @@
       "Alias": "=",
       "IsDirect": true
     },
-    "\u003C": {
-      "CommandId": "com.microsoft.cmdpal.windowwalker",
-      "Alias": "\u003C",
-      "IsDirect": true
-    },
-    "\u003E": {
-      "CommandId": "com.microsoft.cmdpal.shell",
-      "Alias": "\u003E",
-      "IsDirect": true
-    },
     ")": {
       "CommandId": "com.microsoft.cmdpal.timedate",
       "Alias": ")",
@@ -517,6 +539,7 @@
   },
   "CommandHotkeys": [],
   "SummonOn": "ToMouse",
+  "ToastPosition": "UseSystemSettings",
   "DisableAnimations": true,
   "LastWindowPosition": {
     "X": 560,
@@ -535,6 +558,7 @@
     "Side": "Top",
     "DockSize": "Default",
     "AlwaysOnTop": true,
+    "AutoHide": false,
     "Backdrop": "Acrylic",
     "Theme": "Default",
     "ColorizationMode": "None",
@@ -599,5 +623,6 @@
   "BackgroundImagePath": null,
   "BackdropStyle": "Mica",
   "BackdropOpacity": 100,
-  "GalleryFeedUrl": null
+  "GalleryFeedUrl": null,
+  "ShowHwndFrame": false
 }
